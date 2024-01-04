@@ -52,7 +52,7 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
     - 108321065 成祉彥
 - docker、 docker-compose 安裝
     - 110213076 鄭鈺曄
-- Web server、Tailscale
+- Web server
     - 109213069 梁心瑜
     - 110213027 簡齊君
 - 奇奇怪怪的功能發想與設定
