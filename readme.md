@@ -41,7 +41,7 @@
 ## Job Assignment
 - 樹莓派前期設定
     - 108321065 成祉彥
-- docker 安裝
+- docker、 docker-compose 安裝
     - 110213076 鄭鈺曄
 - Web server、Tailscale
     - 109213069 梁心瑜
