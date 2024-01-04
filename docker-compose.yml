@@ -1,0 +1,79 @@
+version: '3.8'
+services:
+  seafile-server:
+    image: ggogel/seafile-server:11.0.3
+    volumes:
+      - seafile-data:/shared 
+    environment:
+      - DB_HOST=db
+      - DB_ROOT_PASSWD=db_dev
+      - TIME_ZONE=Europe/Berlin
+      - HTTPS=true
+      - SEAFILE_URL=sync.tfbs.site # Mandatory on first deployment!
+    depends_on:
+      - db
+      - memcached
+      - seafile-caddy
+    networks:
+      - seafile-net
+
+  seahub:
+    image: ggogel/seahub:11.0.3
+    volumes:
+      - seafile-data:/shared
+      - seahub-avatars:/shared/seafile/seahub-data/avatars
+      - seahub-custom:/shared/seafile/seahub-data/custom 
+    environment:
+      - SEAFILE_ADMIN_EMAIL=me@example.com
+      - SEAFILE_ADMIN_PASSWORD=asecret
+    depends_on:
+      - seafile-server
+      - seafile-caddy
+      - seahub-media
+    networks:
+      - seafile-net
+  
+  seahub-media:
+    image: ggogel/seahub-media:11.0.3
+    volumes:
+     - seahub-avatars:/usr/share/caddy/media/avatars
+     - seahub-custom:/usr/share/caddy/media/custom
+    depends_on:
+      - seafile-caddy
+    networks:
+      - seafile-net
+
+  db:
+    image: mariadb:10.11.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=db_dev
+      - MYSQL_LOG_CONSOLE=true
+      - MARIADB_AUTO_UPGRADE=true
+    volumes:
+      - seafile-mariadb:/var/lib/mysql
+    networks:
+      - seafile-net
+
+  memcached:
+    image: memcached:1.6.22
+    entrypoint: memcached -m 1024
+    networks:
+      - seafile-net
+
+  seafile-caddy:
+    image: ggogel/seafile-caddy:2.7.6
+    ports:
+      - "80:80" # Point your reverse proxy to port 80 of this service
+    networks:
+      - seafile-net
+      - default
+
+networks:
+  seafile-net:
+    internal: true
+
+volumes:
+  seafile-data:
+  seafile-mariadb:
+  seahub-avatars:
+  seahub-custom:
