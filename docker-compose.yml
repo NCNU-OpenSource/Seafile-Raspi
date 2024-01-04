@@ -1,15 +1,15 @@
 version: '3.8'
 services:
   seafile-server:
-    image: ggogel/seafile-server:11.0.3
+    image: ggogel/seafile-server:10.0.1
     volumes:
-      - seafile-data:/shared 
+      - /mnt/Share/seafile-containerized/seafile-data:/shared 
     environment:
       - DB_HOST=db
       - DB_ROOT_PASSWD=db_dev
-      - TIME_ZONE=Europe/Berlin
+      - TIME_ZONE=Asia/Taipei
       - HTTPS=true
-      - SEAFILE_URL=sync.tfbs.site # Mandatory on first deployment!
+      - SEAFILE_SERVER_HOSTNAME=sync.ex.com # Mandatory on first deployment!
     depends_on:
       - db
       - memcached
@@ -18,14 +18,14 @@ services:
       - seafile-net
 
   seahub:
-    image: ggogel/seahub:11.0.3
+    image: ggogel/seahub:10.0.1
     volumes:
-      - seafile-data:/shared
-      - seahub-avatars:/shared/seafile/seahub-data/avatars
-      - seahub-custom:/shared/seafile/seahub-data/custom 
+      - /mnt/Share/seafile-containerized/seafile-data:/shared
+      - /mnt/Share/seafile-containerized/seahub-avatars:/shared/seafile/seahub-data/avatars
+      - /mnt/Share/seafile-containerized/seahub-custom:/shared/seafile/seahub-data/custom 
     environment:
-      - SEAFILE_ADMIN_EMAIL=me@example.com
-      - SEAFILE_ADMIN_PASSWORD=asecret
+      - SEAFILE_ADMIN_EMAIL=ex@ex.com
+      - SEAFILE_ADMIN_PASSWORD=exPasswd
     depends_on:
       - seafile-server
       - seafile-caddy
@@ -34,36 +34,35 @@ services:
       - seafile-net
   
   seahub-media:
-    image: ggogel/seahub-media:11.0.3
+    image: ggogel/seahub-media:10.0.1
     volumes:
-     - seahub-avatars:/usr/share/caddy/media/avatars
-     - seahub-custom:/usr/share/caddy/media/custom
+     - /mnt/Share/seafile-containerized/seahub-avatars:/usr/share/caddy/media/avatars
+     - /mnt/Share/seafile-containerized/seahub-custom:/usr/share/caddy/media/custom
     depends_on:
       - seafile-caddy
     networks:
       - seafile-net
 
   db:
-    image: mariadb:10.11.6
+    image: mariadb:10.11.5
     environment:
       - MYSQL_ROOT_PASSWORD=db_dev
       - MYSQL_LOG_CONSOLE=true
-      - MARIADB_AUTO_UPGRADE=true
     volumes:
-      - seafile-mariadb:/var/lib/mysql
+      - /mnt/Share/seafile-containerized/seafile-mariadb:/var/lib/mysql
     networks:
       - seafile-net
 
   memcached:
-    image: memcached:1.6.22
+    image: memcached:1.6.21
     entrypoint: memcached -m 1024
     networks:
       - seafile-net
 
   seafile-caddy:
-    image: ggogel/seafile-caddy:2.7.6
+    image: ggogel/seafile-caddy:2.7.4
     ports:
-      - "80:80" # Point your reverse proxy to port 80 of this service
+      - "1234:80" # Point your reverse proxy to port 80 of this service
     networks:
       - seafile-net
       - default
