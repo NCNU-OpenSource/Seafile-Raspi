@@ -30,14 +30,26 @@
     - SSH： `Interface Options` -> `SSH` -> 選擇 Yes
 - 安裝 docker 以及 docker-compose
     - 由於本次使用 Pi 4，因此安裝參考官方文件，選擇 Debian 環境
-    - 詳細安裝指令請參考官方網站[https://docs.docker.com/engine/install/debian/]
+    - 詳細安裝指令請參考[官方網站](https://docs.docker.com/engine/install/debian/)
 - 安裝 Nginx
     -  `sudo apt install nginx`
 - 安裝 Tailscale
-    - 詳細安裝指令請參考官方網站[https://tailscale.com/download/linux/rpi]
+    - 詳細安裝指令請參考[官方網站](https://tailscale.com/download/linux/rpi)
 
 ## Usage
 
 ## Job Assignment
+- 樹莓派前期設定
+    - 108321065 成祉彥
+- docker 安裝
+    - 110213076 鄭鈺曄
+- Web server、Tailscale
+    - 109213069 梁心瑜
+    - 110213027 簡齊君
+- 奇奇怪怪的功能發想與設定
+    - 110213047 楊昀潼
+    - 110213027 簡齊君
 
 ## References
+- [Docker installation](https://docs.docker.com/engine/install/debian/)
+- [Tailscale installation](https://tailscale.com/download/linux/rpi)
