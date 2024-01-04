@@ -34,6 +34,7 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 - 安裝 docker 以及 docker-compose
     - 由於本次使用 Pi 4，因此安裝參考官方文件，選擇 Debian 環境
     - 詳細安裝指令請參考[官方網站](https://docs.docker.com/engine/install/debian/)
+    - [docker image 來源](https://github.com/ggogel/seafile-containerized)
     - docker-compose 相關設定
         - ![Alt text](image-3.png)
 - 安裝 Nginx
