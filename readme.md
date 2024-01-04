@@ -1,8 +1,7 @@
-# 出事了阿北
+# 雲端省錢小幫手
 
 ## Concept Development
 GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派建立一個 NAS，來放超級多的照片，這樣就能省下每個月的 Google One 的錢。
-(GDSC 超棒
 
 ## Implementation Resources
 - 硬體
@@ -35,6 +34,8 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 - 安裝 docker 以及 docker-compose
     - 由於本次使用 Pi 4，因此安裝參考官方文件，選擇 Debian 環境
     - 詳細安裝指令請參考[官方網站](https://docs.docker.com/engine/install/debian/)
+    - docker-compose 相關設定
+        - ![Alt text](image-3.png)
 - 安裝 Nginx
     -  `sudo apt install nginx`
 - ISCSI 卸載硬碟
