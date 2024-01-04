@@ -1,21 +1,23 @@
-# 出事了阿北
+# 雲端省錢小幫手
 
 ## Concept Development
-利用樹莓派建立一個 NAS，只要偵測到有人下載東西就會發出奇怪的聲音，絕對是你想要惡整朋友的絕佳選擇！ 
-
-注意：此專案只是課程報告，如果因此破壞你們的友情，概不負責
+GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派建立一個 NAS，來放超級多的照片，這樣就能省下每個月的 Google One 的錢。
 
 ## Implementation Resources
 - 硬體
     - Raspberry Pi 4
     - 16 GB SD card
+    - 計中免費的 VM
+    - 一臺放在實驗室的 NAS
 - 軟體
-    - docker
-    - Tailscale
+    - Docker
+    - NGINX
+    - ISCSI
 
 ## Existing Library/Software
-- Tailscale
-- docker
+- Docker 
+- NGINX
+- ISCSI
 
 ## Implementation Process
 
@@ -32,10 +34,11 @@
 - 安裝 docker 以及 docker-compose
     - 由於本次使用 Pi 4，因此安裝參考官方文件，選擇 Debian 環境
     - 詳細安裝指令請參考[官方網站](https://docs.docker.com/engine/install/debian/)
+    - [docker image 來源](https://github.com/ggogel/seafile-containerized)
+    - docker-compose 相關設定
+        - ![Alt text](image-3.png)
 - 安裝 Nginx
     -  `sudo apt install nginx`
-- 安裝 Tailscale
-    - 詳細安裝指令請參考[官方網站](https://tailscale.com/download/linux/rpi)
 - ISCSI 卸載硬碟
     - ![Alt text](image.png)
 - 格式化新掛上去的硬碟
@@ -50,7 +53,7 @@
     - 108321065 成祉彥
 - docker、 docker-compose 安裝
     - 110213076 鄭鈺曄
-- Web server、Tailscale
+- Web server
     - 109213069 梁心瑜
     - 110213027 簡齊君
 - 奇奇怪怪的功能發想與設定
@@ -59,4 +62,3 @@
 
 ## References
 - [Docker installation](https://docs.docker.com/engine/install/debian/)
-- [Tailscale installation](https://tailscale.com/download/linux/rpi)
