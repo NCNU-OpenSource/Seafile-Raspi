@@ -10,6 +10,8 @@
     - Raspberry Pi 4
     - 16 GB SD card
 - 軟體
+    - docker
+    - Tailscale
 
 ## Existing Library/Software
 - Tailscale
@@ -27,6 +29,12 @@
     - Wifi：　`sudo raspi-config` -> `System Options` -> `Wireless LAN`
     - SSH： `Interface Options` -> `SSH` -> 選擇 Yes
 - 安裝 docker 以及 docker-compose
+    - 由於本次使用 Pi 4，因此安裝參考官方文件，選擇 Debian 環境
+    - 詳細安裝指令請參考官方網站[https://docs.docker.com/engine/install/debian/]
+- 安裝 Nginx
+    -  `sudo apt install nginx`
+- 安裝 Tailscale
+    - 詳細安裝指令請參考官方網站[https://tailscale.com/download/linux/rpi]
 
 ## Usage
 
