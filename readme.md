@@ -3,7 +3,7 @@
 ## Concept Development
 利用樹莓派建立一個 NAS，只要偵測到有人下載東西就會發出奇怪的聲音，絕對是你想要惡整朋友的絕佳選擇！ 
 
-注意：此專案只是課程報告，如果因此破壞你們的友情，概不負責
+注意：此專案只是課程報告，如果因此破壞你們的友情，概不負責 (⊙ω⊙)
 
 ## Implementation Resources
 - 硬體
@@ -11,7 +11,6 @@
     - 16 GB SD card
 - 軟體
     - docker
-    - Tailscale
 
 ## Existing Library/Software
 - Tailscale
@@ -34,8 +33,6 @@
     - 詳細安裝指令請參考[官方網站](https://docs.docker.com/engine/install/debian/)
 - 安裝 Nginx
     -  `sudo apt install nginx`
-- 安裝 Tailscale
-    - 詳細安裝指令請參考[官方網站](https://tailscale.com/download/linux/rpi)
 - ISCSI 卸載硬碟
     - ![Alt text](image.png)
 - 格式化新掛上去的硬碟
@@ -59,4 +56,3 @@
 
 ## References
 - [Docker installation](https://docs.docker.com/engine/install/debian/)
-- [Tailscale installation](https://tailscale.com/download/linux/rpi)
