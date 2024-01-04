@@ -7,8 +7,9 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 - 硬體
     - Raspberry Pi 4
     - 16 GB SD card
-    - 計中免費的 VM
-    - 一臺放在實驗室的 NAS
+    - VM
+    - NAS
+    - Tailscale
 - 軟體
     - Docker
     - NGINX
@@ -76,3 +77,4 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 
 ## References
 - [Docker installation](https://docs.docker.com/engine/install/debian/)
+- [Docker image](https://github.com/ggogel/seafile-containerized)
