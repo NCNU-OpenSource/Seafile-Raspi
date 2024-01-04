@@ -24,6 +24,7 @@
 - Raspberry Pi 
 
 ## Installation
+**以下環境皆為 Linux**
 - 在 SD 卡灌入樹莓派系統
 - 設定 WiFi 以及 SSH 
     - Wifi：　`sudo raspi-config` -> `System Options` -> `Wireless LAN`
@@ -35,6 +36,12 @@
     -  `sudo apt install nginx`
 - 安裝 Tailscale
     - 詳細安裝指令請參考[官方網站](https://tailscale.com/download/linux/rpi)
+- ISCSI 卸載硬碟
+    - ![Alt text](image.png)
+- 格式化新掛上去的硬碟
+    - ![Alt text](image-1.png)
+- 掛載硬碟
+    - ![Alt text](image-2.png)
 
 ## Usage
 
