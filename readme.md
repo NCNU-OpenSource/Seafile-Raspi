@@ -1,20 +1,24 @@
 # 出事了阿北
 
 ## Concept Development
-利用樹莓派建立一個 NAS，只要偵測到有人下載東西就會發出奇怪的聲音，絕對是你想要惡整朋友的絕佳選擇！ 
-
-注意：此專案只是課程報告，如果因此破壞你們的友情，概不負責 (⊙ω⊙)
+GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派建立一個 NAS，來放超級多的照片，這樣就能省下每個月的 Google One 的錢。
+(GDSC 超棒
 
 ## Implementation Resources
 - 硬體
     - Raspberry Pi 4
     - 16 GB SD card
+    - 計中免費的 VM
+    - 一臺放在實驗室的 NAS
 - 軟體
-    - docker
+    - Docker
+    - NGINX
+    - ISCSI
 
 ## Existing Library/Software
-- Tailscale
-- docker
+- Docker 
+- NGINX
+- ISCSI
 
 ## Implementation Process
 
