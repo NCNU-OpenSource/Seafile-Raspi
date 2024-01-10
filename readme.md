@@ -79,6 +79,10 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 
 ### Tailscale
 
+- `sudo tailscale up` 啟動 tailscale
+  - 跟隨指示登入
+- `sudo tailscale status` 查看狀態 
+
 ### Docker
 #### 修改 Docker volume 默認位置
 1. `sudo nano /etc/docker/daemon.json` 修改 docker volume 默認位置
