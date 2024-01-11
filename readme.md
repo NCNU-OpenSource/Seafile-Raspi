@@ -111,7 +111,7 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 - `sudo systemctl restart nginx` 重啟 nginx
 - `sudo systemctl status nginx` 查看 nginx 狀態
 
-#### 執行 LNMP 指令
+#### 執行 LNMP 指令（適用於 LNMP 一鍵安裝包）
 - `sudo lnmp vhost add` 建立虛擬主機
 
 
