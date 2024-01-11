@@ -78,6 +78,12 @@ GDSC 社團需要有一個地方來存拍的照片，所以我們利用樹莓派
 ## Usage
 
 ### Tailscale
+1. 在樹莓派上執行指令 sudo tailscale up
+2. 會出現認證連結 點擊連結註冊 tailscale
+3. 註冊完成後 樹莓派與tailscale的server會進行連結
+4. 在tailscale的網站上把樹莓派的裝置分享給其他使用者
+![Alt text](images/tailscale.png)
+5. 其他使用者接受邀請後可以透過VPN連線去tail去取得與樹莓派同一個網域
 
 ### Docker
 #### 修改 Docker volume 默認位置
